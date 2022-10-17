@@ -1,7 +1,1 @@
-# hello
-# world
-# yoyoy
-
-$
-
-hello
+# hello world
