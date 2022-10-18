@@ -1,0 +1,162 @@
+:root {
+    --container-width: 70px;
+    --circle-dimension: 10px;
+    --circle-spacing: 5px;
+    --vertical: 30px;
+    --horizontal: 10px;
+    --shadow: 1px 1px 12px white;
+}
+
+body {
+    background-color: black;
+}
+
+.container div {
+    border-radius: 12px;
+}
+
+.playground {
+    background-color: blue;
+    position: fixed;
+    width: 14px;
+    left: 58px;
+    top: 63px;
+    height: 14px;
+}
+
+
+
+.container {
+    margin: 0;
+    left: 30px;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    width: var(--container-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: spin 1s infinite linear;
+    transition: left 1s linear, top 1s linear;
+    position: fixed;
+}
+
+.container:active::before {
+    font-size: 5px;
+    content: 'yahoo!!!';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    border-radius: 50%;
+    top: 37%;
+    display: grid;
+    place-content: center;
+}
+
+.container> :first-child {
+    width: var(--horizontal);
+    height: var(--vertical);
+    background-color: green;
+    box-shadow: var(--shadow);
+}
+
+.container> :nth-child(2) {
+    display: flex;
+    margin-block: var(--circle-spacing);
+
+}
+
+.container :nth-child(2) div {
+    background-color: red;
+    width: calc((var(--container-width) - var(--circle-dimension)) / 2);
+    height: var(--horizontal);
+    box-shadow: var(--shadow);
+
+}
+
+
+.container :nth-child(2) span {
+    width: var(--circle-dimension);
+    height: var(--circle-dimension);
+    border-radius: 50%;
+    background-color: cyan;
+    margin-inline: var(--circle-spacing);
+
+}
+
+.container :nth-child(3) {
+    width: var(--horizontal);
+    height: var(--vertical);
+    background-color: blue;
+    box-shadow: var(--shadow);
+
+}
+
+
+.delete {
+    top: 20px;
+    color: red;
+}
+
+.delete .counter {
+    font-size: 16px;
+    display: grid;
+    place-content: center;
+    color: black;
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    right: -17px;
+    top: -1px;
+
+}
+
+.add {
+    top: 110px;
+    color: green;
+}
+
+button {
+    right: 20px;
+    position: fixed;
+    background-color: transparent;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 32px;
+    display: grid;
+    place-content: center;
+    font-size: 15px;
+    z-index: 99;
+    animation: fade-in 1s linear;
+}
+
+.delete:active {
+    background-color: white;
+    border-color: red;
+}
+
+.add:active {
+    background-color: white;
+    border-color: green;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+}
