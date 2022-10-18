@@ -108,8 +108,8 @@ const interval = setInterval(() => {
 
 
 
-// const timeout = 15_000
-const timeout = 100
+const timeout = 15_000
+// const timeout = 100
 setTimeout(() => {
     const buttonsHTml = `
     <div>
